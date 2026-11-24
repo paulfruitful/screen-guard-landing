@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Screen Guard — Browse Safe. Live Free.</title>
+  <meta name="description" content="Screen Guard is a private, on-device Android content-protection app that automatically shields explicit content across social media, browsers, and third-party apps." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a href="#top" class="brand">
+        <svg class="brand-logo" width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M32 5L54 13.5V32C54 46.2 44.5 55.6 32 60C19.5 55.6 10 46.2 10 32V13.5L32 5Z" fill="#0C2D84" stroke="#F5B82E" stroke-width="3.6" stroke-linejoin="round"/>
+          <path d="M32 21V41M22 31H42" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <span class="brand-name">Screen Guard</span>
+          <span class="brand-tag">Browse Safe. Live Free.</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#setup">Setup</a>
+        <a href="https://github.com/paulfruitful/ScreenGuard" target="_blank" rel="noopener" class="nav-cta">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Strict On-Device Protection</span>
+          </div>
+          <h1>Protect your screen, guard your mind.</h1>
+          <p class="hero-lead">
+            Screen Guard runs quietly on your Android phone and covers explicit photos and videos across social media, browsers, and third-party apps — all 100% locally without ever uploading your screen.
+          </p>
+          <div class="hero-actions">
+            <a href="https://github.com/paulfruitful/ScreenGuard/blob/main/ScreenGuard-debug.apk" target="_blank" rel="noopener" class="btn-gold">Download Android APK</a>
+            <a href="#how-it-works" class="btn-glass">See How It Works</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">On-Device AI</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">0</span>
+              <span class="stat-label">Saved Screenshots</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">Android 11+</span>
+              <span class="stat-label">System-Wide Shield</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="phone-frame">
+            <div class="phone-toggle">
+              <button type="button" class="toggle-btn active" data-view="home">Home Screen</button>
+              <button type="button" class="toggle-btn" data-view="shield">Protective Shield</button>
+            </div>
+
+            <!-- Phone View 1: Home Dashboard -->
+            <div class="phone-screen phone-home active" id="view-home">
+              <div class="mock-halo">
+                <svg width="54" height="54" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32 5L54 13.5V32C54 46.2 44.5 55.6 32 60C19.5 55.6 10 46.2 10 32V13.5L32 5Z" fill="#0C2D84" stroke="#F5B82E" stroke-width="3.6" stroke-linejoin="round"/>
+                  <path d="M32 21V41M22 31H42" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="mock-pill-green">Protected</div>
+              <h3>Your device is safe</h3>
+              <p class="mock-sub">Screen Guard is actively blocking inappropriate content.</p>
+              <div class="mock-btn-gold">Pause Protection</div>
+              <div class="mock-stats-card">
+                <div>
+                  <strong>Strict</strong>
+                  <span>Mode</span>
+                </div>
+                <div>
+                  <strong>100%</strong>
+                  <span>Private</span>
+                </div>
+                <div>
+                  <strong>Active</strong>
+                  <span>Observer</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone View 2: Protective Shield Modal -->
+            <div class="phone-screen phone-shield" id="view-shield">
+              <div class="shield-modal-card">
+                <svg width="42" height="42" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32 5L54 13.5V32C54 46.2 44.5 55.6 32 60C19.5 55.6 10 46.2 10 32V13.5L32 5Z" fill="#0C2D84" stroke="#F5B82E" stroke-width="3.6" stroke-linejoin="round"/>
+                  <path d="M32 21V41M22 31H42" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+                </svg>
+                <div class="mock-pill-green small">Screen Guard Protected</div>
+                <h4>Content hidden for your protection.</h4>
+                <p class="shield-support">Screen Guard detected content that matches your protection settings.</p>
+                <div class="context-chip">Protected in X</div>
+                <div class="verse-box">
+                  <p class="verse-text" id="verse-text">"Flee from sexual immorality. All other sins a person commits are outside the body, but whoever sins sexually, sins against their own body."</p>
+                  <p class="verse-ref" id="verse-ref">— 1 Corinthians 6:18</p>
+                  <button type="button" class="verse-btn" id="next-verse-btn">Read Full Scripture in Bible</button>
+                </div>
+                <div class="mock-btn-gold full">Return to Safe Browsing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="apps-strip">
+      <div class="container apps-inner">
+        <span class="apps-label">Works seamlessly across</span>
+        <div class="apps-list">
+          <span>X (Twitter)</span>
+          <span>Instagram</span>
+          <span>TikTok</span>
+          <span>Google Chrome</span>
+          <span>YouTube</span>
+          <span>Facebook</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Features</span>
+          <h2>Built for real-world protection</h2>
+          <p>Simple controls for everyday users, powered by fast on-device detection.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Strict Mode Always On</h3>
+            <p>No confusing sensitivity toggles or temporary bypasses. Screen Guard enforces consistent, strict filtering whenever explicit imagery or video appears.</p>
+          </article>
+          <article class="card">
+            <h3>Fast Social Feed Detection</h3>
+            <p>Analyzes in-feed videos and posts in real time so explicit content is covered immediately without slowing down your scrolling.</p>
+          </article>
+          <article class="card">
+            <h3>Auto-Fade Recovery</h3>
+            <p>Once you scroll past or close explicit content, the protective shield automatically fades away so you can continue browsing normally.</p>
+          </article>
+          <article class="card">
+            <h3>Scripture Encouragement</h3>
+            <p>Each intervention shares a randomly chosen Bible verse to encourage purity, with one tap to open the full passage in your Bible app or on bible.com.</p>
+          </article>
+          <article class="card">
+            <h3>Return to Safe Browsing</h3>
+            <p>One tap closes the offending screen in the background and brings you directly back to the Screen Guard Home dashboard.</p>
+          </article>
+          <article class="card">
+            <h3>Trusted App Exclusions</h3>
+            <p>Choose trusted apps like WhatsApp, Messages, or Gmail in Settings whenever you want Screen Guard to skip them.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">How It Works</span>
+          <h2>Three quiet steps in the background</h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <h3>Observes On-Screen Frames</h3>
+            <p>Uses Android Accessibility safely to inspect the active screen while automatically skipping keyboards, passwords, and private windows.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <h3>Checks Locally with On-Device AI</h3>
+            <p>Evaluates frames inside temporary device memory in milliseconds — nothing is saved to storage or sent to any server.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <h3>Shields &amp; Encourages</h3>
+            <p>Covers explicit content with the Screen Guard shield, offers a strengthening Bible verse, and fades away when the screen is safe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="privacy">
+      <div class="container">
+        <div class="privacy-banner">
+          <div class="privacy-copy">
+            <span class="section-tag">Privacy Promise</span>
+            <h2>100% Private on Your Phone</h2>
+            <p>
+              Screen Guard was built from the ground up so your personal browsing never leaves your device. No accounts, no tracking, no cloud servers, and zero saved screenshots.
+            </p>
+          </div>
+          <ul class="privacy-list">
+            <li>Zero cloud uploads or external API calls</li>
+            <li>No screenshots written to disk or gallery</li>
+            <li>Skips password fields and banking/incognito windows</li>
+            <li>Open source on GitHub for full transparency</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="setup">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Get Started</span>
+          <h2>Up and running in under a minute</h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-num">1</span>
+            <h3>Install the APK</h3>
+            <p>Download ScreenGuard-debug.apk on your Android 11+ phone and install it.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">2</span>
+            <h3>Enable Accessibility</h3>
+            <p>Open Screen Guard, tap Enable Protection, and switch Screen Guard Content Observer ON.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">3</span>
+            <h3>Keep Alive in Background</h3>
+            <p>Allow background protection if prompted so your phone keeps the shield active at all times.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-brand">
+        <strong>Screen Guard</strong>
+        <span>Browse Safe. Live Free.</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/paulfruitful/ScreenGuard" target="_blank" rel="noopener">Main App Repository</a>
+        <a href="https://github.com/paulfruitful/ScreenGuard/blob/main/RELEASE_NOTES.md" target="_blank" rel="noopener">Release Notes</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
