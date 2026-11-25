@@ -53,3 +53,29 @@ if (nextVerseBtn && verseTextEl && verseRefEl) {
     verseRefEl.textContent = verses[verseIdx].ref;
   });
 }
+
+// Keep the download button synced with the latest GitHub Release APK automatically
+(async function syncLatestReleaseDownload() {
+  const downloadBtn = document.querySelector('.hero-actions .btn-gold');
+  if (!downloadBtn) return;
+  try {
+    const res = await fetch(
+      'https://api.github.com/repos/paulfruitful/ScreenGuard/releases/latest',
+      {headers: {Accept: 'application/vnd.github+json'}},
+    );
+    if (!res.ok) return;
+    const release = await res.json();
+    const tag = release?.tag_name;
+    const apkAsset = Array.isArray(release?.assets)
+      ? release.assets.find((a) => typeof a?.name === 'string' && a.name.endsWith('.apk'))
+      : null;
+    if (apkAsset?.browser_download_url) {
+      downloadBtn.setAttribute('href', apkAsset.browser_download_url);
+      if (tag) {
+        downloadBtn.textContent = `Download Android (${tag})`;
+      }
+    }
+  } catch (_) {
+    // Keep the static fallback href in index.html if offline or rate-limited
+  }
+})();
